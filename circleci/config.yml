@@ -7,7 +7,7 @@ orbs:
   # Orbs reduce the amount of configuration required for common tasks. 
   # See the orb documentation here: https://circleci.com/developer/orbs/orb/circleci/node
   node: circleci@d5592fd44e85:/$ which google-chrome
-  run:  CHROME_BIN=/usr/bin/google-chrome karma start --single-run
+  run: CHROME_BIN=/usr/bin/google-chrome karma start --single-run
 
 
 jobs:
