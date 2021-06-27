@@ -9,8 +9,8 @@ orbs:
   node: circleci/node:12.18.3
         #circleci@d5592fd44e85:/$ env | grep CHROME_BIN
         #circleci@d5592fd44e85:/$
-  environment:
-        CHROME_BIN: /usr/bin/google-chrome     
+  #environment:
+  #      CHROME_BIN: /usr/bin/google-chrome     
         
 
 
