@@ -38,18 +38,18 @@ jobs:
       - node/install-packages:
            pkg-manager: yarn 
 
-      - restore cache:
-          keys:
-          - v1-dependencies-{{ checksum package.json }}
-          - v1-dependencies-
-          #cache_key: cache_key cg-front-end-{{ .Branch }}-{{ checksum “package-lock.json” }}
-          #dist_key: dist_key cg-front-end-dist-{{ .Revision }}
+      #- restore cache:
+      #    keys:
+      #    - v1-dependencies-{{ checksum package.json }}
+      #    - v1-dependencies-
+      #  cache_key: cache_key cg-front-end-{{ .Branch }}-{{ checksum “package-lock.json” }}
+      #  dist_key: dist_key cg-front-end-dist-{{ .Revision }}
       - run: yarn install
-      - save cache:
-          paths:
-            - node_modules
-          keys:
-          - v1-dependencies-{{ checksum package.json }}
+      #- save cache:
+      #    paths:
+      #      - node_modules
+      #    keys:
+      #    - v1-dependencies-{{ checksum package.json }}
       - run: yarn ng build --prod
       - run: yarn ng test --single-run
           #name: Run tests
