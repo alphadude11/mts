@@ -23,7 +23,7 @@ import * as appCommonGuards from './guards';
 
 /* Services */
 import * as appCommonServices from './services';
-import * as authServices from '@modules/auth/services';
+//import * as authServices from '@modules/auth/services';
 
 @NgModule({
     imports: [CommonModule, RouterModule, ...modules],
@@ -45,7 +45,7 @@ export class AppCommonModule {
             ngModule: AppCommonModule,
             providers: [
                 ...appCommonServices.services,
-                ...authServices.services,
+//                ...authServices.services,
                 ...appCommonGuards.guards,
                 { provide: 'window', useValue: window },
             ],

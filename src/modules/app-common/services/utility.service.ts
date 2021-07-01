@@ -1,11 +1,11 @@
-import { HttpClient } from '@angular/common/http';
+/*import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { CopyToClipboard, CopyToClipboardOptions } from '@common/models';
 import copyToClipboard from 'copy-to-clipboard';
 import { Observable } from 'rxjs';
 
 @Injectable()
-export class UtilityService {
+export class UtilityServiceXXX {
     _window: Window;
     parse: JSON['parse'];
     stringify: JSON['stringify'];
@@ -43,3 +43,4 @@ export class UtilityService {
         this._copyToClipboard(text, options);
     }
 }
+*/

@@ -1,7 +1,7 @@
 import { Component, DebugElement, NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { UtilityService } from '@common/services';
+//import { UtilityService } from '@common/services';
 import { UtilityServiceStub } from '@testing/stubs';
 
 import { VersionComponent } from './version.component';
@@ -21,14 +21,16 @@ describe('VersionComponent', () => {
     let componentDE: DebugElement;
     let componentNE: Element;
 
-    let utilityService: UtilityService;
+    //let utilityService: UtilityService;
     const utilityServiceStub = UtilityServiceStub;
 
     beforeEach(() => {
         TestBed.configureTestingModule({
             declarations: [TestHostComponent, VersionComponent],
             imports: [NoopAnimationsModule],
-            providers: [{ provide: UtilityService, useValue: new UtilityServiceStub() }],
+            providers: [{ 
+                //provide: UtilityService, 
+                useValue: new UtilityServiceStub() }],
             schemas: [NO_ERRORS_SCHEMA],
         }).compileComponents();
 
@@ -41,7 +43,7 @@ describe('VersionComponent', () => {
         component = componentDE.componentInstance;
         componentNE = componentDE.nativeElement;
 
-        utilityService = TestBed.inject(UtilityService);
+        //utilityService = TestBed.inject(UtilityService);
 
         fixture.detectChanges();
     });

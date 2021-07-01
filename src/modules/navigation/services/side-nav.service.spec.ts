@@ -1,5 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-import { UtilityService } from '@common/services';
+//import { UtilityService } from '@common/services';
 import { UtilityServiceStub } from '@testing/stubs';
 import { Subject } from 'rxjs';
 
@@ -7,16 +7,16 @@ import { SideNavService } from './side-nav.service';
 
 describe('SideNavService', () => {
     let sideNavService: SideNavService;
-    let utilityService: UtilityService;
+    //let utilityService: UtilityService;
 
     beforeEach(() => {
         TestBed.configureTestingModule({
             providers: [
                 SideNavService,
-                { provide: UtilityService, useValue: new UtilityServiceStub() },
+                //{ provide: UtilityService, useValue: new UtilityServiceStub() },
             ],
         });
-        utilityService = TestBed.inject(UtilityService);
+        //utilityService = TestBed.inject(UtilityService);
     });
 
     it('should return false if hash of side nav is not expanded', () => {
@@ -36,13 +36,13 @@ describe('SideNavService', () => {
         expect(expandSubject instanceof Subject).toBe(true);
     });
     it('should load cachedExpandedTable if it exists', () => {
-        spyOn(utilityService, 'getStoredObject').and.returnValue({ 123: true });
+        //spyOn(utilityService, 'getStoredObject').and.returnValue({ 123: true });
         sideNavService = TestBed.inject(SideNavService);
         expect(sideNavService.isExpanded('123')).toBeTrue();
         sideNavService.setExpanded('123', false);
     });
     it('should NOT load cachedExpandedTable if it does NOT exists', () => {
-        spyOn(utilityService, 'getStoredObject').and.returnValue(null);
+        //spyOn(utilityService, 'getStoredObject').and.returnValue(null);
         sideNavService = TestBed.inject(SideNavService);
         expect(sideNavService.isExpanded('123')).toBeFalse();
     });
@@ -61,9 +61,9 @@ describe('SideNavService', () => {
         expect(sideNavService.saveCache).not.toHaveBeenCalled();
     });
     it('should only save cache for /dashboard routes', () => {
-        spyOn(utilityService, 'storeObject').and.callThrough();
+        //spyOn(utilityService, 'storeObject').and.callThrough();
         sideNavService = TestBed.inject(SideNavService);
         sideNavService.saveCache(['a'], '/asd');
-        expect(utilityService.storeObject).not.toHaveBeenCalled();
+        //expect(utilityService.storeObject).not.toHaveBeenCalled();
     });
 });

@@ -7,7 +7,7 @@ import {
     OnDestroy,
     OnInit,
 } from '@angular/core';
-import { UtilityService } from '@common/services';
+//import { UtilityService } from '@common/services';
 import { sideNavItems, sideNavSections } from '@modules/navigation/data/side-nav-dashboard.data';
 import { NavigationService } from '@modules/navigation/services';
 import { Subscription } from 'rxjs';
@@ -29,7 +29,7 @@ export class LayoutDashboardComponent implements OnInit, OnDestroy {
     sidenavStyle = 'sidenav-dark';
 
     constructor(
-        public utilityService: UtilityService,
+        //public utilityService: UtilityService,
         public navigationService: NavigationService,
         private changeDetectorRef: ChangeDetectorRef
     ) {}
@@ -50,9 +50,9 @@ export class LayoutDashboardComponent implements OnInit, OnDestroy {
 
     closeSideNavIfOpen() {
         const BOOTSTRAP_LG_WIDTH = 992;
-        if (this.utilityService.window.innerWidth >= 992) {
-            return;
-        }
+        //if (this.utilityService.window.innerWidth >= 992) {
+        //    return;
+        //}
         // After the lg breakpoint, hidden is actually visible.
         // So the toggleSideNav below only will fire if the screen is < 992px
         // and the sideNav is open.

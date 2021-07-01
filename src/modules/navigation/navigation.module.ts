@@ -20,8 +20,8 @@ import * as navigationGuards from './guards';
 
 /* Services */
 import * as navigationServices from './services';
-import { AlertsService } from '@modules/alerts/services';
-import { MessagesService } from '@modules/messages/services';
+//import { AlertsService } from '@modules/alerts/services';
+//import { MessagesService } from '@modules/messages/services';
 
 @NgModule({
     imports: [CommonModule, RouterModule, AppCommonModule],
@@ -44,8 +44,8 @@ export class NavigationModule {
             providers: [
                 ...navigationServices.services,
                 ...navigationGuards.guards,
-                AlertsService,
-                MessagesService,
+//                AlertsService,
+//                MessagesService,
             ],
         };
     }

@@ -1,7 +1,7 @@
 import { ChangeDetectorRef, Component, DebugElement, NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { UtilityService } from '@common/services';
+//import { UtilityService } from '@common/services';
 import { NavigationService } from '@modules/navigation/services';
 import { NavigationServiceStub, UtilityServiceStub } from '@testing/stubs';
 
@@ -25,14 +25,14 @@ describe('LayoutDashboardComponent', () => {
     let componentNE: Element;
 
     let navigationService: NavigationService;
-    let utilityService: UtilityService;
+    //let utilityService: UtilityService;
 
     beforeEach(() => {
         TestBed.configureTestingModule({
             declarations: [TestHostComponent, LayoutDashboardComponent],
             imports: [NoopAnimationsModule],
             providers: [
-                { provide: UtilityService, useValue: new UtilityServiceStub() },
+                //{ provide: UtilityService, useValue: new UtilityServiceStub() },
                 { provide: NavigationService, useValue: NavigationServiceStub },
                 ChangeDetectorRef,
             ],
@@ -49,7 +49,7 @@ describe('LayoutDashboardComponent', () => {
         componentNE = componentDE.nativeElement;
 
         navigationService = TestBed.inject(NavigationService);
-        utilityService = TestBed.inject(UtilityService);
+        //utilityService = TestBed.inject(UtilityService);
     });
 
     it('should display the component', () => {
@@ -62,14 +62,14 @@ describe('LayoutDashboardComponent', () => {
         expect(component.sidenavStyle).toBe('sidenav-light');
     });
     it('should NOT closeSideNavIfOpen if width >= 992 (lg)', () => {
-        spyOnProperty(utilityService.window, 'innerWidth').and.returnValue(1000);
+        //spyOnProperty(utilityService.window, 'innerWidth').and.returnValue(1000);
         spyOn(navigationService, 'toggleSideNav');
         component.sideNavHidden = true;
         component.closeSideNavIfOpen();
         expect(navigationService.toggleSideNav).not.toHaveBeenCalled();
     });
     it('should closeSideNavIfOpen if width < 992 (lg)', () => {
-        spyOnProperty(utilityService.window, 'innerWidth').and.returnValue(500);
+        //spyOnProperty(utilityService.window, 'innerWidth').and.returnValue(500);
         spyOn(navigationService, 'toggleSideNav');
         component.sideNavHidden = true;
         component.closeSideNavIfOpen();

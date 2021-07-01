@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { UtilityService } from '@modules/app-common/services';
+//import { UtilityService } from '@modules/app-common/services';
 import { Subject } from 'rxjs';
 
 const _expand$ = new Subject<string[]>();
@@ -14,13 +14,15 @@ const EXPANDED_TABLE_CACHE_NAME = 'sbpro-expanded-table';
 export class SideNavService {
     expandedTable: ExpandedTable = {};
 
-    constructor(private utilityService: UtilityService) {
-        const cachedExpandedTable = this.utilityService.getStoredObject<ExpandedTable>(
-            EXPANDED_TABLE_CACHE_NAME
-        );
-        if (cachedExpandedTable) {
-            this.expandedTable = cachedExpandedTable;
-        }
+    constructor(
+        //private utilityService: UtilityService
+        ) {
+        //const cachedExpandedTable = this.utilityService.getStoredObject<ExpandedTable>(
+        //    EXPANDED_TABLE_CACHE_NAME
+        //);
+        //if (cachedExpandedTable) {
+        //    this.expandedTable = cachedExpandedTable;
+        //}
     }
 
     get expand$() {
@@ -53,6 +55,6 @@ export class SideNavService {
         }
         this.expandedTable = {};
         hierarchyExtension.forEach((id) => (this.expandedTable[id] = true));
-        this.utilityService.storeObject(EXPANDED_TABLE_CACHE_NAME, this.expandedTable);
+        //this.utilityService.storeObject(EXPANDED_TABLE_CACHE_NAME, this.expandedTable);
     }
 }

@@ -1,8 +1,9 @@
 import { CopyToClipboardOptions } from '@common/models';
-import { UtilityService } from '@common/services';
+//import { UtilityService } from '@common/services';
 import { of } from 'rxjs';
 
-export class UtilityServiceStub implements Partial<UtilityService> {
+export class UtilityServiceStub //implements Partial<UtilityService> 
+{
     _window = window;
     version$ = of('VERSION');
     get window() {
