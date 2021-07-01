@@ -1,7 +1,7 @@
 import { ChangeDetectorRef, Component, DebugElement, NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { SBProTocItemDirective } from '@modules/toc/directives';
+//import { SBProTocItemDirective } from '@modules/toc/directives';
 
 import { CardNavigationComponent } from './card-navigation.component';
 
@@ -39,7 +39,7 @@ describe('CardNavigationComponent', () => {
         TestBed.configureTestingModule({
             declarations: [TestHostComponent, CardNavigationComponent],
             imports: [NoopAnimationsModule],
-            providers: [SBProTocItemDirective, ChangeDetectorRef],
+            //providers: [SBProTocItemDirective, ChangeDetectorRef],
             schemas: [NO_ERRORS_SCHEMA],
         }).compileComponents();
 

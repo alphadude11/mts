@@ -1,7 +1,7 @@
 import { Component, DebugElement, NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { UserService } from '@modules/auth/services';
+//import { UserService } from '@modules/auth/services';
 import { NavigationService } from '@modules/navigation/services';
 import { NavigationServiceStub } from '@testing/stubs';
 
@@ -35,7 +35,7 @@ describe('SideNavComponent', () => {
             imports: [NoopAnimationsModule],
             providers: [
                 { provide: NavigationService, useValue: NavigationServiceStub },
-                UserService,
+  //              UserService,
             ],
             schemas: [NO_ERRORS_SCHEMA],
         }).compileComponents();
