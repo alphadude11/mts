@@ -2,7 +2,8 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node:12.18.3-broesers
+      - image: circleci/node:12.18.3-browsers
+      #=ChromeHeadlessNoSandbox
 
     working_directory: ~repos      
 
